@@ -1,7 +1,7 @@
 import UIKit
 
 //************ variables para modificar ************
-var semilla:Double = 5497
+var semilla:Double = 4380
 let cantidadSemillas = 100
 //************ variables para modificar ************
 

@@ -2,9 +2,7 @@ import UIKit
 
 //************ archivo para modificar (archivo.csv en Resources) ************
 //IMPORTANTE: todos los numeros deben de ir en una sola linea desde el archivo de excel
-let filePath = Bundle.main.path(forResource: "numeros", ofType: "csv")
-//para numeros.csv K = 7 e Intervalo sumarle 0.01
-//Para numeros3.csv K = 10 e Intervalo sumarle 0.01
+let filePath = Bundle.main.path(forResource: "numeros3", ofType: "csv")
 
 //************ Algoritmo ************
 if let path = filePath {
@@ -18,18 +16,18 @@ if let path = filePath {
     var numeros:[Float] = numerosArregloStr.map { Float($0)! }
     
     print("N = \(numeros.count)")
-    //************ Seleccion de K (variable para modificar) ************
-    let K:Float = 7
+    let K:Float = ceil(logf(Float(numeros.count)) / logf(2.0))
     
     var intervalo = (numeros.max()! - numeros.min()!) / K
     print("Intervalo = \(intervalo)")
+    
     
     let digitos = String(intervalo).characters.split{$0 == "."}.map(String.init)
     var decimales = digitos[1].characters.count
     let ajuste = 1 / (pow(10.0, Float(decimales)))
     
     //************ Ajuste al intervalo(variable para modificar) ************
-    //intervalo += 0.01; print("Nuevo intervalo = \(intervalo)")
+    intervalo += 0.01; print("Nuevo intervalo = \(intervalo)")
     
     var min = numeros.min()!
     var mayor = min + intervalo - ajuste
@@ -40,9 +38,9 @@ if let path = filePath {
       min = mayor + ajuste
       mayor = min + intervalo - ajuste
     }
-
-    if (min < 1.0) {
-      print("REALIZAR AJUSTE en 'intervalo' o 'K'")
+    min
+    if (numeros.max()! > min) {
+      print("REALIZAR AJUSTE en 'intervalo'")
     }
     else {
       print("INTERVALOS ADECUADOS\n")
