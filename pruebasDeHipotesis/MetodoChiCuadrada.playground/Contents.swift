@@ -130,7 +130,8 @@ if let path = filePath {
         
         K = Float(contsBien.count)
         
-        Ei = (1.0/K) * 100.0
+        //Ei = (1.0/K) * 100.0
+        Ei = Float(numeros.count) / K
         
         for i in 0..<contsBien.count {
           X2 += (pow(contsBien[i] - Ei, 2)) / Ei
@@ -145,7 +146,8 @@ if let path = filePath {
           print("Cantidad de nums en el intervalo = \(Int(conts[i]))")
         }
         
-        Ei = (1.0/K) * 100.0
+        //Ei = (1.0/K) * 100.0
+        Ei = Float(numeros.count) / K
         
         for i in 0..<conts.count {
           X2 += (pow(conts[i] - Ei, 2)) / Ei
