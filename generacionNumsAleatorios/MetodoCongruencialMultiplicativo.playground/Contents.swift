@@ -3,7 +3,7 @@ import UIKit
 //************ variables para modificar ************
 let a:Double = 43
 var numAleatorio:Double = 117
-let m:Double = 100
+let m:Double = 1000
 
 let limite = 100
 //************ variables para modificar ************
@@ -16,7 +16,6 @@ var contadorSemillas = 0
 var cola:Int = 0
 var valor:Int
 var encontrado = false
-
 
 for i in rango {
   
@@ -35,10 +34,8 @@ for i in rango {
   
   semillasArray.append(Int(round(numAleatorio)))
   
-  var operacion:Double = (a*numAleatorio)/m
-  var entero = Int(operacion)
-  numAleatorio = operacion.truncatingRemainder(dividingBy: 1) * m
-  var decimal = numAleatorio/m
+  var temp = Int(a*numAleatorio) % Int(m)
+  numAleatorio = Double(temp)
   
 }
 

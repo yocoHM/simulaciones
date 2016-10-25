@@ -1,9 +1,9 @@
 import UIKit
 
 //************ variables para modificar ************
-let a:Double = 43
-var numAleatorio:Double = 117
-let c:Double = 0
+let a:Double = 8
+var numAleatorio:Double = 27
+let c:Double = 47
 let m:Double = 100
 
 let limite = 100
@@ -36,14 +36,12 @@ for i in rango {
   
   semillasArray.append(Int(round(numAleatorio)))
   
-  var operacion:Double = (a*numAleatorio+c)/m
-  var entero = Int(operacion)
-  numAleatorio = operacion.truncatingRemainder(dividingBy: 1) * m
-  var decimal = numAleatorio/m
+  var temp = Int(a*numAleatorio + c) % Int(m)
+  numAleatorio = Double(temp)
   
 }
 
-print("")
+print()
 print("Cola = \(cola)")
 print("Ciclo = \((contadorSemillas - 1) - cola)")
 print("Periodo = \(contadorSemillas - 1)")
