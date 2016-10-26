@@ -2,7 +2,7 @@ import UIKit
 
 //************ archivo para modificar (archivo.csv en Resources) ************
 //IMPORTANTE: todos los numeros deben de ir en una sola linea desde el archivo de excel
-let filePath = Bundle.main.path(forResource: "pocosNumeros", ofType: "csv")
+let filePath = Bundle.main.path(forResource: "veinte", ofType: "csv")
 
 //************ Algoritmo ************
 if let path = filePath {
