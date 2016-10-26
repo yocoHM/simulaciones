@@ -2,7 +2,7 @@ import UIKit
 
 //************ archivo para modificar (archivo.csv en Resources) ************
 //IMPORTANTE: todos los numeros deben de ir en una sola linea desde el archivo de excel
-let filePath = Bundle.main.path(forResource: "independenciaNums", ofType: "csv")
+let filePath = Bundle.main.path(forResource: "veinte", ofType: "csv")
 
 //************ Algoritmo ************
 if let path = filePath {
@@ -21,7 +21,7 @@ if let path = filePath {
     //************ Variables para modificar ************
     let i = 3
     let l = 5
-    let M = 4
+    let M = 2
     //************ Variables para modificar ************
     
     let formulaM = i + (M + 1) * l
